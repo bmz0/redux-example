@@ -1,0 +1,21 @@
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  background-image: url(logo.svg), url(redux.svg);
+  background-position: top 20px right 20px, top 20px right 140px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100px, 70px;
+  background-attachment: fixed, fixed;
+}
+
+.main {
+  max-width: 800px;
+  padding: .5em;
+}

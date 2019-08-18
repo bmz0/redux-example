@@ -1,0 +1,53 @@
+.details table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.details th {
+  width: 20%;
+  padding: .25em;
+  text-align: right;
+  border-bottom: 1px solid currentColor;
+}
+
+.details td {
+  padding: .25em;
+  text-align: center;
+  border-bottom: 1px solid currentColor;
+}
+
+.buttons {
+  margin-top: 1em;
+  display: flex;
+}
+
+.buttons button {
+  font-size: inherit;
+  padding: .5em;
+  flex: 1;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  color: currentColor;
+}
+
+.buttons button:active {
+  background-color: #222;
+}
+
+.buttons button + button {
+  margin-left: .5em;
+}
+
+.toggle {
+  float: right;
+  font-size: small;
+  padding: .25em .5em;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  color: currentColor;
+  vertical-align: middle;
+}
+
+.toggle:active {
+  background-color: #222;
+}
