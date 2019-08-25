@@ -1,0 +1,115 @@
+.todo {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 2em 1fr auto;
+  grid-template-areas: 'checkmark title button';
+}
+
+.todo > * {
+  align-items: center;
+}
+
+.todo:hover {
+  outline: 1px solid lightblue;
+}
+
+.todo:hover > * {
+  transition: background-color .2s ease-in-out;
+}
+
+.todo > :hover {
+  background-color: #444;
+}
+
+.todo .checkboxinput {
+  grid-area: checkmark;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.checkmark {
+  grid-area: checkmark;
+  display: flex;
+  box-sizing: border-box;
+  align-self: stretch;
+  justify-content: center;
+  font-size: larger;
+  cursor: pointer;
+  overflow: hidden;
+}
+.checkmark::before {
+  content: '•';
+  align-self: center;
+  /*transform: scale(1);
+  transform-origin: 40% center;
+  transition: transform .2s linear;
+}
+.checkmark:hover::before {
+  transform: scale(1.6);*/
+}
+
+.title {
+  grid-area: title;
+  box-sizing: border-box;
+  display: flex;
+  padding: .5rem;
+  user-select: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title > * {
+  flex: auto;
+}
+
+.todo input:checked ~ .checkmark::before {
+  content: '\2713'; /* ✓ */
+}
+
+.todo input:checked ~ .title:not(.editmode) > span {
+  text-decoration: line-through;
+}
+
+.title.editmode {
+  padding: 0;
+  align-items: stretch;
+}
+
+.button {
+  grid-area: button;
+  color: inherit;
+  background-color: inherit;
+  box-sizing: border-box;
+  padding: .5em;
+  text-decoration: none;
+  visibility: hidden;
+  font-size: larger;
+}
+
+.todo:hover .button {
+  visibility: visible;
+}
+
+.editbutton {
+  margin-left: auto;
+  align-self: stretch;
+  flex: 0 1em;
+  color: inherit;
+  background-color: transparent;
+  font: inherit;
+  border: none;
+  visibility: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .3s;
+  border-radius: 25%;
+}
+
+.editbutton:hover {
+  background-color: #888;
+}
+
+.title:hover .editbutton {
+  visibility: visible;
+}

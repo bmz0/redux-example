@@ -1,0 +1,21 @@
+
+.editor {
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+  padding: 0 .5em;
+}
+
+.editor ~ button {
+  flex: 0 2.5em;
+  background-color: #222;
+  font: inherit;
+}
+
+.savebutton {
+  margin-left: auto;
+  color: green;
+}
+.cancelbutton {
+  color: red;
+}

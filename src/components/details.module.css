@@ -1,3 +1,7 @@
+.details {
+  grid-area: todos;
+}
+
 .details table {
   width: 100%;
   table-layout: fixed;
@@ -16,26 +20,35 @@
   border-bottom: 1px solid currentColor;
 }
 
-.buttons {
+.links {
   margin-top: 1em;
-  display: flex;
+  display: grid;
+  grid-column-gap: .5em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "prev back next";
 }
 
-.buttons button {
+.prev {
+  grid-area: prev;
+}
+.back {
+  grid-area: back;
+}
+.next {
+  grid-area: next;
+}
+
+.links .link {
   font-size: inherit;
   padding: .5em;
-  flex: 1;
   border: 1px solid currentColor;
   background-color: transparent;
   color: currentColor;
+  text-decoration: none;
 }
 
-.buttons button:active {
+.links .link:active {
   background-color: #222;
-}
-
-.buttons button + button {
-  margin-left: .5em;
 }
 
 .toggle {
@@ -50,4 +63,8 @@
 
 .toggle:active {
   background-color: #222;
+}
+
+.header {
+  grid-area: header;
 }
